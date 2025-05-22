@@ -1,0 +1,1 @@
+gcc maze_game_web.c -o maze_game_web

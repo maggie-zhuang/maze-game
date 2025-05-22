@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迷宮遊戲</title>
+    <style>
+        body { font-family: monospace; text-align: center; background-color: #111; color: #0f0; }
+        pre { background: #000; padding: 10px; display: inline-block; border: 1px solid #0f0; }
+        .buttons button { margin: 5px; padding: 10px 20px; font-size: 20px; }
+    </style>
+    {% if message %}
+    <script>
+        window.onload = function() {
+            if (confirm("{{ message }}")) {
+                window.location.href = "/";
+            } else {
+                alert("你選擇結束遊戲！");
+            }
+        }
+    </script>
+    {% endif %}
+</head>
+<body>
+    <h1>🧱 C 語言迷宮遊戲 - 網頁版</h1>
+    <form method="post">
+        <div class="buttons">
+            <button name="move" value="w">⬆️</button><br>
+            <button name="move" value="a">⬅️</button>
+            <button name="move" value="s">⬇️</button>
+            <button name="move" value="d">➡️</button>
+        </div>
+        <br>
+        <button name="move" value="cheat">🎯 作弊完成迷宮</button>
+    </form>
+    <p>第 {{ level }} 關 ⏱️ 已用時間：{{ elapsed }} 秒</p>
+    <pre>{{ maze }}</pre>
+</body>
+</html>
