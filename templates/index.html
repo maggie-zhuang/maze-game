@@ -32,7 +32,16 @@
         <br>
         <button name="move" value="cheat">🎯 作弊完成迷宮</button>
     </form>
-    <p>第 {{ level }} 關 ⏱️ 已用時間：{{ elapsed }} 秒</p>
+    <p>⏱️ 已用時間：<span id="timer">{{ elapsed }}</span> 秒</p>
+
+    <script>
+        let seconds = parseInt(document.getElementById("timer").textContent);
+        setInterval(() => {
+            seconds += 1;
+            document.getElementById("timer").textContent = seconds;
+        }, 1000);
+    </script>
+
     <pre>{{ maze }}</pre>
 </body>
 </html>
