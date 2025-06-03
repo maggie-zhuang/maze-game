@@ -1,4 +1,3 @@
-# ✅ Flask app.py（支援隨機地圖）
 from flask import Flask, render_template, request, session
 import subprocess
 import os
